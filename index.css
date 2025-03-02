@@ -1,0 +1,23 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background: black;
+    color: white;
+}
+
+.hide {
+    display: none;
+}
+.TaskContainer {
+    border: 1px solid red;
+}
+
+li {
+    list-style: none;
+}
+
+.checked {
+    border: 1px solid lightgreen;
+}

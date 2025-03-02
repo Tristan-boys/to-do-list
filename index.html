@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<head>
+    <title>MIAOU</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="index.css">
+</head>
+<body>
+    <header>
+    </header>
+    <main>
+        <section id="formSection">
+            <fieldset>
+                <legend>Souhaitez-vous vous inscrire ou vous connecter:</legend>
+                <div>
+                    <select name="selector">
+                        <option value="" selected></option>
+                        <option value="inscription">inscription</option>
+                        <option value="connexion">connexion</option>
+                    </select>
+                </div>
+            </fieldset>
+            <form class="hide">
+                <h1>Inscrivez-vous</h1>
+                <br>
+                <label id="formMessage"></label>
+                <br>
+                <label>Email :</label>
+                <input type="text" id="formEmail" name="email" autocomplete="off" required>
+                <label>Password :</label>
+                <input type="password" id="formPass" name="pass" autocomplete="off" required>
+                <button id="formButton" class="inscription">Inscription</button>
+            </form>
+        </section>
+        <section id="taskManagerSection" class="hide">
+            <label>Profil connecté : </label>
+            <label id="connectedProfile"></label>
+            <br>
+            <label>Heure d'expiration de session : </label>
+            <label id="expiration"></label>
+            <br>
+            <button id="logoutButton">Se déconnectez</button>
+            <br>
+            <button id="buttonCreateTask">Ajouter une tâche</button>
+            <br>
+            <input id="searchTaskText" type="text" name="text" autocomplete="off">
+            <button id="searchTaskButton">Recherche</button>
+            <ul id="listTask">
+
+            </ul>
+            <dialog id="createTask">
+                <button id="closeDialog">Close</button>
+                <br>
+                <form>
+                    <label>Titre</label>
+                    <input type="text" id="createTaskTitle" name="titre" autocomplete="off" required>
+                    <br>
+                    <label id="createTaskMessage"></label>
+                    <br>
+                    <label>Description</label>
+                    <input type="text" id="createTaskDescription" name="description" autocomplete="off" required>
+                    <br>
+                    <button type="submit" id="submitCreateTask">Créer la tâche</button>
+                </form>
+            </dialog>
+        </section>
+    </main>
+    <footer>
+
+    </footer>
+    <script src="selector.js"></script>
+    <script src="checkEmail.js"></script>
+    <script src="listTask.js"></script>
+    <script src="checkTaskTitle.js"></script>
+    <script src="createPropertyTask.js"></script>
+    <script src="deleteTask.js"></script>
+    <script src="isTaskChecked.js"></script>
+    <script src="checkTask.js"></script>
+    <script src="displayTask.js"></script>
+    <script src="newID.js"></script>
+    <script src="nav.js"></script>
+    <script src="form.js"></script>
+    <script src="createTask.js"></script>
+    <script src="searchTask.js"></script>
+</body>
