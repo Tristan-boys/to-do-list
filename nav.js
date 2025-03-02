@@ -3,6 +3,9 @@ const connectedProfile = taskManagerSection.querySelector('#connectedProfile');
 const expiration = taskManagerSection.querySelector('#expiration');
 const logoutButton = taskManagerSection.querySelector('#logoutButton');
 
+/**
+ * Personnalise la page du user connecté.
+ */
 const afficheProfile = () => {
     formSection.classList.add('hide');
     taskManagerSection.classList.remove('hide');
@@ -16,6 +19,9 @@ const afficheProfile = () => {
     displayTask(sessionListTask());
 }
 
+/**
+ * Vérifie que le user est bien connecté.
+ */
 const isConnected = () => {
     const session = JSON.parse(localStorage.getItem('session')) || null;
     if (session !== null) {
@@ -33,6 +39,9 @@ if (isConnected()) {
     afficheProfile();
 }
 
+/**
+ * Supprime l'item session dans le localstorage et affiche le système d'inscription/connexion.
+ */
 logoutButton.addEventListener('click', () => {
     localStorage.removeItem('session');
     formSection.classList.remove('hide');

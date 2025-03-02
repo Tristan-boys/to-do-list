@@ -7,6 +7,9 @@ const createTaskDescription = formCreateTask.querySelector('#createTaskDescripti
 const createTaskDeadline = formCreateTask.querySelector('#createTaskDeadline');
 const createTaskMessage = formCreateTask.querySelector('#createTaskMessage');
 
+/**
+ * Événement qui ouvre la modale qui permet de créer une task.
+ */
 buttonCreateTask.addEventListener('click', () => {
     if (!(isConnected())) {
         window.location.reload();
@@ -16,20 +19,21 @@ buttonCreateTask.addEventListener('click', () => {
     createTaskDescription.value = "";
 })
 
+/**
+ * Événement qui permet de fermer la modale.
+ */
 buttonCloseDialog.addEventListener('click', () => {
     dialogCreateTask.close();
 })
 
-formCreateTask.addEventListener('blur', () => {
-    console.log(createTaskTitle.value);
-})
-
+/**
+ * Événement qui permet d'enregistrer la création de task dans le localstorage.
+ */
 formCreateTask.addEventListener('submit', (event) => {
     event.preventDefault();
     const session = JSON.parse(localStorage.getItem('session'));
     if (!checkTaskTitle(createTaskTitle.value)) {
         const deadline = new Date(createTaskDeadline.value);
-        console.log(deadline.getTime() + ' > ' + Date.now())
         const task =
         {
             id: newID('tasks'),

@@ -1,5 +1,8 @@
 const searchTaskButton = document.querySelector('#searchTaskButton');
 
+/**
+ * Cherche le texte du paramètre dans la liste de tasks du user connecté.
+ */
 const searchTask = (searchTextTask) => {
     const sessionTasks = sessionListTask();
     displayTask(sessionTasks.filter((task) =>
@@ -9,11 +12,11 @@ const searchTask = (searchTextTask) => {
     );
 };
 
-searchTaskButton.addEventListener('click', () => {
-    searchTask(document.querySelector('#searchTaskText'));
-});
-
 const searchTextTask = document.querySelector('#searchTaskText');
+
+/**
+ * Éxecute la fonction searchTask à chaque lettre entrée dans la barre de recherche.
+ */
 searchTextTask.addEventListener('input', (event) => {
     searchTask(event.target);
 });

@@ -1,3 +1,6 @@
+/**
+ * Créé les événements lier au bouton de suppression de task.
+ */
 const deleteTask = (sessionTasks) => {
     const listTask = document.querySelector('#listTask');
     const deleteButtons = listTask.querySelectorAll('.delete');

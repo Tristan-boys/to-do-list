@@ -3,7 +3,9 @@ const formPass = formSection.querySelector('#formPass');
 const formMessage = formSection.querySelector('#formMessage');
 
 formSelect.selectedIndex = 0;
-
+/**
+ * Connecte ou inscrit selon la valeur du select.
+ */
 formButton.addEventListener('click', (event) => {
     event.preventDefault()
     const formEmail = document.querySelector("#formEmail")
