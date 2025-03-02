@@ -1,9 +1,9 @@
 const deleteTask = (sessionTasks) => {
     const listTask = document.querySelector('#listTask');
     const deleteButtons = listTask.querySelectorAll('.delete');
-    for(let i = 0; i<deleteButtons.length; i++){
+    for (let i = 0; i < deleteButtons.length; i++) {
         deleteButtons[i].addEventListener('click', () => {
-            if(isConnected()){
+            if (isConnected()) {
                 const tasks = JSON.parse(localStorage.getItem('tasks'));
                 const taskID = sessionTasks[i].id;
                 const newTasks = tasks.filter((task) => task.id !== taskID);

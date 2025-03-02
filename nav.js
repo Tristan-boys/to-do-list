@@ -18,7 +18,7 @@ const afficheProfile = () => {
 
 const isConnected = () => {
     const session = JSON.parse(localStorage.getItem('session')) || null;
-    if(session !== null){
+    if (session !== null) {
         const sessionExpire = new Date(session.expirationDate);
         if (sessionExpire > Date.now()) {
             return true;
@@ -29,7 +29,7 @@ const isConnected = () => {
     }
 }
 
-if(isConnected()){
+if (isConnected()) {
     afficheProfile();
 }
 

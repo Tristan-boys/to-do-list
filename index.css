@@ -10,6 +10,7 @@ body {
 .hide {
     display: none;
 }
+
 .TaskContainer {
     border: 1px solid red;
 }

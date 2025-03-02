@@ -7,8 +7,9 @@ const createTaskDescription = formCreateTask.querySelector('#createTaskDescripti
 const createTaskMessage = formCreateTask.querySelector('#createTaskMessage');
 
 buttonCreateTask.addEventListener('click', () => {
-    if(!(isConnected()))
+    if (!(isConnected())) {
         window.location.reload();
+    }
     dialogCreateTask.showModal();
     createTaskTitle.value = "";
     createTaskDescription.value = "";
@@ -41,8 +42,8 @@ formCreateTask.addEventListener('submit', (event) => {
             tasks.push(task);
             localStorage.setItem('tasks', JSON.stringify(tasks));
         }
-            dialogCreateTask.close();
-            displayTask(sessionListTask());
+        dialogCreateTask.close();
+        displayTask(sessionListTask());
     } else {
         createTaskMessage.innerHTML = "Une tâche avec ce titre existe déjà.";
     }

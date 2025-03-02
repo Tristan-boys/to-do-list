@@ -16,4 +16,4 @@ formSelect.addEventListener('change', (event) => {
     } else {
         formFields.classList.add('hide');
     }
-})
+});
