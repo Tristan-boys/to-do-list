@@ -3,11 +3,12 @@
  * @param task {id: number, title: string, description: string, deadline: Date, status: string, owner: string, checked: string}
  */
 const createPropertyTask = (task) => {
-    const propertyText = document.createElement("p");
+    const propertyText = document.createElement("article");
+    propertyText.classList.add('card');
     const {title, description, deadline, status} = task;
-    propertyText.innerHTML = `Titre : ${title} <br>
-        Description : ${description} <br>
-        Deadline : ${deadline} ${status} <br>`;
+    propertyText.innerHTML = `<h1>Titre : ${title}</h1>
+        <ul><li>Description : ${description}</li>
+        <li>Deadline : ${deadline} ${status} </li></ul>`;
     return propertyText;
 }
 
@@ -29,6 +30,7 @@ const checkBoxTask = (id) => {
 const buttonDeleteTask = () => {
     const propertyButton = document.createElement("button");
     propertyButton.classList.add("delete");
-    propertyButton.textContent = `X`;
+    propertyButton.classList.add("button");
+    propertyButton.textContent = `SUPPRIMER`;
     return propertyButton;
 }

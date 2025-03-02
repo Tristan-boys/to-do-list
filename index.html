@@ -9,7 +9,7 @@
     <header>
     </header>
     <main>
-        <section id="formSection">
+        <section id="formSection" class="container">
             <fieldset>
                 <legend>Souhaitez-vous vous inscrire ou vous connecter:</legend>
                 <div>
@@ -29,21 +29,25 @@
                 <input type="text" id="formEmail" name="email" autocomplete="off" required>
                 <label>Password :</label>
                 <input type="password" id="formPass" name="pass" autocomplete="off" required>
-                <button id="formButton" class="inscription">Inscription</button>
+                <button id="formButton" class="inscription button">Inscription</button>
             </form>
         </section>
         <section id="taskManagerSection" class="hide">
-            <label>Profil connecté : </label>
-            <label id="connectedProfile"></label>
-            <br>
-            <label>Heure d'expiration de session : </label>
-            <label id="expiration"></label>
-            <br>
-            <button id="logoutButton">Se déconnectez</button>
-            <br>
-            <button id="buttonCreateTask">Ajouter une tâche</button>
-            <br>
-            <input id="searchTaskText" type="text" name="text" autocomplete="off">
+            <div class="container profile">
+                <div>
+                    <label>Profil connecté : </label>
+                    <label id="connectedProfile"></label>
+                    <br>
+                    <label>Heure d'expiration de session : </label>
+                    <label id="expiration"></label>
+                </div>
+                <div>
+                    <button id="logoutButton" class="button">Se déconnectez</button>
+                    <button id="buttonCreateTask" class="button">Ajouter une tâche</button>
+                </div>
+            </div>
+            <label>Rechercher : </label>
+            <input id="searchTaskText" type="text" name="text" placeholder="Rechercher" autocomplete="off">
             <ul id="listTask">
 
             </ul>
@@ -61,7 +65,8 @@
                     <br>
                     <label>Deadline</label>
                     <input type="date" id="createTaskDeadline" name="deadline" autocomplete="off" required>
-                    <button type="submit" id="submitCreateTask">Créer la tâche</button>
+                    <br>
+                    <button type="submit" id="submitCreateTask" class="button">Créer la tâche</button>
                 </form>
             </dialog>
         </section>

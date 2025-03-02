@@ -6,8 +6,9 @@ const displayTask = (tasks) => {
     ulElement.textContent = "";
     tasks.forEach((task) => {
         const newLi = document.createElement("li");
-        newLi.classList.add("TaskContainer")
-        newLi.appendChild(createPropertyTask(task))
+        newLi.classList.add("TaskContainer");
+        newLi.classList.add("card");
+        newLi.appendChild(createPropertyTask(task));
         newLi.appendChild(checkBoxTask(task.id));
         newLi.appendChild(buttonDeleteTask());
         ulElement.appendChild(newLi);
