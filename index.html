@@ -52,14 +52,16 @@
                 <button id="closeDialog">Close</button>
                 <br>
                 <form>
+                    <label id="createTaskMessage"></label>
+                    <br>
                     <label>Titre</label>
                     <input type="text" id="createTaskTitle" name="titre" autocomplete="off" required>
-                    <br>
-                    <label id="createTaskMessage"></label>
                     <br>
                     <label>Description</label>
                     <input type="text" id="createTaskDescription" name="description" autocomplete="off" required>
                     <br>
+                    <label>Deadline</label>
+                    <input type="date" id="createTaskDeadline" name="deadline" autocomplete="off" required>
                     <button type="submit" id="submitCreateTask">Créer la tâche</button>
                 </form>
             </dialog>

@@ -4,6 +4,7 @@ const dialogCreateTask = taskManagerSection.querySelector('#createTask');
 const formCreateTask = taskManagerSection.querySelector('form');
 const createTaskTitle = formCreateTask.querySelector('#createTaskTitle');
 const createTaskDescription = formCreateTask.querySelector('#createTaskDescription');
+const createTaskDeadline = formCreateTask.querySelector('#createTaskDeadline');
 const createTaskMessage = formCreateTask.querySelector('#createTaskMessage');
 
 buttonCreateTask.addEventListener('click', () => {
@@ -27,11 +28,15 @@ formCreateTask.addEventListener('submit', (event) => {
     event.preventDefault();
     const session = JSON.parse(localStorage.getItem('session'));
     if (!checkTaskTitle(createTaskTitle.value)) {
+        const deadline = new Date(createTaskDeadline.value);
+        console.log(deadline.getTime() + ' > ' + Date.now())
         const task =
         {
             id: newID('tasks'),
             title: createTaskTitle.value,
             description: createTaskDescription.value,
+            deadline: createTaskDeadline.value,
+            status: (deadline.getTime() > Date.now()) ? "OK" : "Passed",
             owner: session.email,
             checked: "false",
         }
